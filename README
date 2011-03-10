@@ -1,4 +1,4 @@
-This is a simple script to extend I18n for Rails 3 in order to create small JSON files in order to pick up translations within javascript.
+This is a simple script to extend I18n for Rails 3 to create small JSON files in order to pick up translations within javascript.
 
 Implementation is simple:
 
@@ -30,5 +30,7 @@ en:
     
 Notes:
   As I am keeping the javascript files to a minimum, I have not included the ability to add further namespaces within the javascript files, so all javascript keys should remain within that scope. I have also not added any ability to have variables passed in/out.
+  
+Please let me know if you found it useful.
   
   

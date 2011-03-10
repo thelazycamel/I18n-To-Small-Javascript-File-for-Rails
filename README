@@ -1,0 +1,34 @@
+This is a simple script to extend I18n for Rails 3 in order to create small JSON files in order to pick up translations within javascript.
+
+Implementation is simple:
+
+1.  Copy the attached i18n_to_javascript.rb file in to the config/initializers/ folder
+2.  In your config/application.rb file add the following in order to run the method when the server starts:
+
+  config.after_initialize do
+    I18n::Backend::Simple.new.write_javascripts
+  end
+
+3.  In your config/locales/en.yml file you separate the translations you want only in js by putting the keys under the namespace javascript eg:
+    
+en:
+  hello: "Hello world"
+  javascript:
+    some_translation: "This is some translation for inserting via javaScript"
+    cool_savings: "This saves parsing everything in your yml file to JSON"
+    
+4.  Now when you start the server, a json file will be translated (per locale) in the following directory:
+    public/javascripts/locales/
+    the file names are created as such: translate_{locale}.js
+
+5.  In your application layout file you just need to connect to them on a per locale basis as such:
+    
+    javascript_include_tag "locale/translate_#{params[:locale]}"
+    
+6.  In your javascript you can simply pull the translation by using 'translate.{key}' so for the above example
+    you would use translate.some_translation, and translate.cool_savings
+    
+Notes:
+  As I am keeping the javascript files to a minimum, I have not included the ability to add further namespaces within the javascript files, so all javascript keys should remain within that scope. I have also not added any ability to have variables passed in/out.
+  
+  

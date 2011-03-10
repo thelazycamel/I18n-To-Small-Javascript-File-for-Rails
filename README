@@ -17,7 +17,7 @@ en:
     some_translation: "This is some translation for inserting via javaScript"
     cool_savings: "This saves parsing everything in your yml file to JSON"
     
-4.  Now when you start the server, a json file will be translated (per locale) in the following directory:
+4.  Now when you start the server, a javascript(json) file will be created (per locale) in the following directory:
     public/javascripts/locales/
     the file names are created as such: translate_{locale}.js
 

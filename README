@@ -23,7 +23,7 @@ en:
 
 5.  In your application layout file you just need to connect to them on a per locale basis as such:
     
-    javascript_include_tag "locale/translate_#{params[:locale]}"
+    javascript_include_tag "locales/translate_#{params[:locale]}"
     
 6.  In your javascript you can simply pull the translation by using 'translate.{key}' so for the above example
     you would use translate.some_translation, and translate.cool_savings
